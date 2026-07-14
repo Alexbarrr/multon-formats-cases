@@ -24,7 +24,6 @@ h1,h2,h3{font-style:italic;font-weight:900;letter-spacing:-.5px;line-height:1.03
 .mut{color:var(--mut)}
 a{color:inherit;text-decoration:none}
 
-/* deck */
 .deck{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 .slide{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;position:relative;padding:80px 6vw;overflow:hidden}
 .s-in{width:100%;max-width:1120px;margin:0 auto;position:relative;z-index:2}
@@ -33,29 +32,24 @@ a{color:inherit;text-decoration:none}
 .brandmark{position:absolute;top:22px;left:32px;z-index:5;font-weight:900;font-style:italic;font-size:18px;color:var(--lime)}
 .brandmark span{color:#fff;font-weight:800;font-size:12px}
 
-/* progress + dots */
 .prog{position:fixed;top:0;left:0;height:3px;background:var(--lime);width:0;z-index:60;transition:width .2s}
 .dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:9px}
 .dots a{width:9px;height:9px;border-radius:50%;background:#3a3a40;transition:background .2s,transform .2s}
 .dots a.on{background:var(--lime);transform:scale(1.3)}
 @media(max-width:760px){.dots{display:none}}
 
-/* typography scale */
 .eyebrow{margin-bottom:18px}
 .h-xl{font-size:clamp(38px,6.4vw,88px);margin:8px 0}
 .h-lg{font-size:clamp(30px,4.6vw,60px);margin:8px 0 20px}
 .lead{font-size:clamp(17px,1.8vw,23px);color:#d6dae1;max-width:60ch}
 .lead.narrow{max-width:48ch}
 
-/* bg treatments */
 .bg-img{position:absolute;inset:0;z-index:0}
 .bg-img img{width:100%;height:100%;object-fit:cover}
 .bg-veil{position:absolute;inset:0;z-index:1}
 .veil-l{background:linear-gradient(90deg,rgba(15,15,16,.95) 0%,rgba(15,15,16,.6) 50%,rgba(15,15,16,.2) 100%)}
-.veil-d{background:linear-gradient(180deg,rgba(18,18,19,.8),rgba(18,18,19,.92))}
 .glow{position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 78% 24%,rgba(198,245,60,.12) 0%,rgba(198,245,60,0) 55%)}
 
-/* stat grid */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;transition:border-color .2s,transform .2s}
 .stat:hover{border-color:rgba(198,245,60,.5);transform:translateY(-4px)}
@@ -66,7 +60,6 @@ a{color:inherit;text-decoration:none}
 .callout{margin-top:22px;background:linear-gradient(90deg,rgba(198,245,60,.1),rgba(198,245,60,0));border-left:4px solid var(--lime);border-radius:12px;padding:20px 24px;font-size:17px}
 .callout b{color:var(--lime);font-style:italic}
 
-/* creative frame */
 .crea{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:center}
 @media(max-width:860px){.crea{grid-template-columns:1fr;gap:26px}}
 .cframe{border:1.5px solid rgba(198,245,60,.4);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.55);background:#000;position:relative;aspect-ratio:4/3}
@@ -76,26 +69,37 @@ a{color:inherit;text-decoration:none}
 .ctag{display:inline-block;background:var(--lime);color:#141414;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:8px;margin-bottom:16px}
 .clink{display:inline-flex;gap:8px;margin-top:18px;color:var(--lime);font-weight:700;font-size:15px}
 
-/* cards */
+/* ТГБ teaser card с реальным продуктом */
+.teaser{border:1.5px solid rgba(198,245,60,.4);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.55);position:relative;aspect-ratio:4/3;background:radial-gradient(120% 100% at 78% 40%,#e11d2a 0%,#a3121c 42%,#141416 100%);display:flex;align-items:center}
+.teaser .prod{position:absolute;right:2%;bottom:0;height:96%;display:flex;align-items:flex-end;gap:0;z-index:2}
+.teaser .prod img{height:100%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5))}
+.teaser .prod .can{height:70%;margin-right:-30px;margin-bottom:6%}
+.teaser .tz{position:relative;z-index:3;padding:8% 6%;max-width:60%}
+.teaser .tz .tt{font-style:italic;font-weight:900;font-size:clamp(22px,3vw,38px);color:#fff;line-height:1.05}
+.teaser .tz .ts{color:rgba(255,255,255,.9);font-size:15px;margin-top:10px}
+.teaser .tz .tb{display:inline-block;margin-top:16px;background:#fff;color:#c00;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px}
+
 .grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
+@media(max-width:560px){.g4{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .2s,border-color .2s}
 .card:hover{transform:translateY(-5px);border-color:rgba(198,245,60,.5)}
 .card .ic{font-size:24px}
-.card h3{font-size:21px;margin:12px 0 9px;font-style:italic;font-weight:800}
-.card p{color:var(--mut);font-size:15px}
+.card h3{font-size:20px;margin:12px 0 9px;font-style:italic;font-weight:800}
+.card p{color:var(--mut);font-size:14px}
 
-/* bullet list */
 .blist{list-style:none;margin-top:10px;max-width:70ch}
 .blist li{position:relative;padding:14px 0 14px 40px;border-bottom:1px solid var(--line);font-size:18px}
 .blist li:before{content:"→";position:absolute;left:6px;color:var(--lime);font-weight:900}
 
-/* CTA */
-.btn{display:inline-block;font-weight:800;border-radius:12px;padding:16px 32px;font-size:16px;transition:transform .15s}
-.btn-lime{background:var(--lime);color:#141414;box-shadow:0 10px 30px rgba(198,245,60,.2)}
-.btn-lime:hover{transform:translateY(-3px)}
+.pills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+@media(max-width:820px){.pills{grid-template-columns:repeat(2,1fr)}}
+.pill{background:var(--card);border:1px solid rgba(198,245,60,.32);border-radius:14px;padding:18px 20px}
+.pill .t{font-style:italic;font-weight:800;font-size:17px;color:var(--lime)}
 .hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:60;color:var(--mut);font-size:12px;opacity:.7}
 </style>
 </head>
@@ -111,7 +115,7 @@ a{color:inherit;text-decoration:none}
     <div class="bg-img"><img src="img/cover_bg.jpg" alt=""></div>
     <div class="bg-veil veil-l"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>01</b> / 12</div>
+    <div class="snum"><b>01</b> / 11</div>
     <div class="s-in">
       <div class="kick eyebrow">Formats.media для бренда «Мултон»</div>
       <h1 class="h-xl">Кейсы размещений<br>в категории <span class="lime">напитков</span></h1>
@@ -123,7 +127,7 @@ a{color:inherit;text-decoration:none}
   <section class="slide" id="s2">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>02</b> / 12</div>
+    <div class="snum"><b>02</b> / 11</div>
     <div class="s-in">
       <div class="kick eyebrow">О подходе</div>
       <h2 class="h-lg">Не просто размещение,<br>а управляемый контакт с брендом</h2>
@@ -131,13 +135,26 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- 3. Rich Media — результаты -->
+  <!-- 3. Rich Media — роль формата -->
   <section class="slide" id="s3">
+    <div class="bg-img"><img src="img/splash1.jpg" alt=""></div>
+    <div class="bg-veil veil-l"></div>
+    <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
+    <div class="snum"><b>03</b> / 11</div>
+    <div class="s-in">
+      <div class="kick eyebrow">Формат Rich Media · роль</div>
+      <h2 class="h-lg">Заметный и глубокий контакт с брендом</h2>
+      <p class="lead">Rich Media сочетает охватную функцию медийной рекламы с интерактивностью, которая вовлекает пользователя в креатив и увеличивает время фактического внимания к сообщению. Для брендов напитков это особенно важно в кампаниях на знание, запуск вкусов, сезонные коммуникации и визуально насыщенные продуктовые истории.</p>
+    </div>
+  </section>
+
+  <!-- 4. Rich Media — результаты -->
+  <section class="slide" id="s4">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>03</b> / 12</div>
+    <div class="snum"><b>04</b> / 11</div>
     <div class="s-in">
-      <div class="kick eyebrow">Формат Rich Media · результаты кампании</div>
+      <div class="kick eyebrow">Rich Media · результаты кампании</div>
       <h2 class="h-lg" style="margin-bottom:8px">Масштабный контакт при контролируемой частоте</h2>
       <p class="lead narrow" style="margin-bottom:26px">Интерактивная кампания обеспечила широкий охват целевой аудитории и глубокое взаимодействие с креативом.</p>
       <div class="stats">
@@ -148,20 +165,7 @@ a{color:inherit;text-decoration:none}
         <div class="stat"><div class="n">11,56 с</div><div class="l">среднее время полной видимости креатива</div></div>
         <div class="stat"><div class="n">0,13%</div><div class="l">CTR</div></div>
       </div>
-      <div class="callout"><b>Итог:</b> широкий охват + дополнительное взаимодействие с брендом без избыточного роста частоты рекламного контакта.</div>
-    </div>
-  </section>
-
-  <!-- 4. Rich Media — роль -->
-  <section class="slide" id="s4">
-    <div class="bg-img"><img src="img/splash1.jpg" alt=""></div>
-    <div class="bg-veil veil-l"></div>
-    <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>04</b> / 12</div>
-    <div class="s-in">
-      <div class="kick eyebrow">Rich Media · роль формата</div>
-      <h2 class="h-lg">Заметный и глубокий контакт с брендом</h2>
-      <p class="lead">Rich Media сочетает охватную функцию медийной рекламы с интерактивностью, которая вовлекает пользователя в креатив и увеличивает время фактического внимания к сообщению. Для брендов напитков это особенно важно в кампаниях на знание, запуск вкусов, сезонные коммуникации и визуально насыщенные продуктовые истории.</p>
+      <div class="callout"><b>Итог:</b> широкий охват и дополнительное взаимодействие с брендом без избыточного роста частоты рекламного контакта.</div>
     </div>
   </section>
 
@@ -169,7 +173,7 @@ a{color:inherit;text-decoration:none}
   <section class="slide" id="s5">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>05</b> / 12</div>
+    <div class="snum"><b>05</b> / 11</div>
     <div class="s-in">
       <div class="crea">
         <div class="cframe">
@@ -186,13 +190,25 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- 6. ТГБ — результаты -->
+  <!-- 6. ТГБ — роль формата -->
   <section class="slide" id="s6">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>06</b> / 12</div>
+    <div class="snum"><b>06</b> / 11</div>
     <div class="s-in">
-      <div class="kick eyebrow">Формат ТГБ · результаты кампании</div>
+      <div class="kick eyebrow">Формат ТГБ · роль</div>
+      <h2 class="h-lg">Когда ставка на трафик и эффективность перехода</h2>
+      <p class="lead">ТГБ — рабочий инструмент для задач, где важны охват, кликабельность и управляемый трафик на сайт или промостраницу. Для брендов напитков формат эффективен в поддержке акций, запуске продуктовых предложений, переадресации в спецпроекты и в механиках, где важен быстрый переход пользователя к следующему действию. В связке с имиджевыми форматами ТГБ закрывает performance-задачу.</p>
+    </div>
+  </section>
+
+  <!-- 7. ТГБ — результаты -->
+  <section class="slide" id="s7">
+    <div class="glow"></div>
+    <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
+    <div class="snum"><b>07</b> / 11</div>
+    <div class="s-in">
+      <div class="kick eyebrow">ТГБ · результаты кампании</div>
       <h2 class="h-lg" style="margin-bottom:8px">Масштабный и качественный трафик на сайт</h2>
       <p class="lead narrow" style="margin-bottom:26px">Кампания была направлена на привлечение объёмного трафика с высокой валидностью и хорошими посткликовыми показателями.</p>
       <div class="stats">
@@ -205,33 +221,29 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
-  <!-- 7. ТГБ — роль -->
-  <section class="slide" id="s7">
-    <div class="glow"></div>
-    <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>07</b> / 12</div>
-    <div class="s-in">
-      <div class="kick eyebrow">ТГБ · роль формата</div>
-      <h2 class="h-lg">Когда ставка на трафик и эффективность перехода</h2>
-      <p class="lead">ТГБ — рабочий инструмент для задач, где важны охват, кликабельность и управляемый трафик на сайт или промостраницу. Для брендов напитков формат эффективен в поддержке акций, запуске продуктовых предложений, переадресации в спецпроекты и в механиках, где важен быстрый переход пользователя к следующему действию. В связке с имиджевыми форматами ТГБ закрывает performance-задачу.</p>
-    </div>
-  </section>
-
-  <!-- 8. Креатив ТГБ — Очаково -->
+  <!-- 8. Креатив ТГБ — Очаково Cool Cola (реальный продукт) -->
   <section class="slide" id="s8">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>08</b> / 12</div>
+    <div class="snum"><b>08</b> / 11</div>
     <div class="s-in">
       <div class="crea">
-        <div class="cframe" style="aspect-ratio:3/2">
-          <img src="img/cola_creative.jpg" alt="ТГБ креатив Очаково Cool Cola">
+        <div class="teaser">
+          <div class="tz">
+            <div class="tt">Cool Cola —<br>вкус, который выбирают</div>
+            <div class="ts">Без ГМО · натуральные ингредиенты</div>
+            <span class="tb">Узнать больше</span>
+          </div>
+          <div class="prod">
+            <img class="can" src="img/cool_can.png" alt="Cool Cola банка">
+            <img src="img/cool_bottle.png" alt="Cool Cola бутылка">
+          </div>
         </div>
         <div>
           <span class="ctag">Кейс · Очаково Cool Cola</span>
           <h2 class="h-lg" style="font-size:clamp(26px,3.4vw,42px)">Пример размещения ТГБ</h2>
           <p class="lead narrow">Лаконичная креативная подача, считываемый оффер и брендовая визуальная система работают на CTR и качество привлечённого трафика. ТГБ быстро масштабирует коммуникацию и приводит аудиторию с понятным пользовательским намерением.</p>
-          <p class="mut" style="font-size:13px;margin-top:14px">Визуал — иллюстрация формата ТГБ; боевой креатив подставляется в макет.</p>
+          <p class="mut" style="font-size:13px;margin-top:14px">Продукт — реальные пакшоты Очаково Cool Cola; вёрстка тизера показана как пример формата ТГБ.</p>
         </div>
       </div>
     </div>
@@ -241,15 +253,16 @@ a{color:inherit;text-decoration:none}
   <section class="slide" id="s9">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>09</b> / 12</div>
+    <div class="snum"><b>09</b> / 11</div>
     <div class="s-in">
       <div class="kick eyebrow">Как мы собираем медиамикс</div>
-      <h2 class="h-lg">Комбинация форматов под разные задачи бренда</h2>
-      <p class="lead narrow" style="margin-bottom:28px">Для брендов уровня «Добрый» оптимально работает не один формат, а связка инструментов — на узнаваемость, глубину контакта и пользовательское действие одновременно.</p>
-      <div class="grid g3">
-        <div class="card"><div class="ic">🎬</div><h3>Rich Media</h3><p>Заметность и активное внимание — глубокий контакт с брендом.</p></div>
+      <h2 class="h-lg">Комбинация форматов под задачи бренда</h2>
+      <p class="lead narrow" style="margin-bottom:28px">Для брендов категории напитков оптимально работает не один формат, а связка инструментов — на узнаваемость, глубину контакта и пользовательское действие одновременно.</p>
+      <div class="grid g4">
+        <div class="card"><div class="ic">🎬</div><h3>Rich banner</h3><p>Заметность и активное внимание — глубокий контакт с брендом.</p></div>
+        <div class="card"><div class="ic">🎞️</div><h3>Interactive video</h3><p>Досмотры и вовлечение через интерактивное видео.</p></div>
         <div class="card"><div class="ic">🎯</div><h3>ТГБ</h3><p>Управляемый трафик и переход пользователя к действию.</p></div>
-        <div class="card"><div class="ic">📰</div><h3>Нативная поддержка</h3><p>Доверие, повторяемость тезисов и доля голоса в категории.</p></div>
+        <div class="card"><div class="ic">📰</div><h3>Native</h3><p>Доверие, повторяемость тезисов и доля голоса в категории.</p></div>
       </div>
     </div>
   </section>
@@ -258,7 +271,7 @@ a{color:inherit;text-decoration:none}
   <section class="slide" id="s10">
     <div class="glow"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>10</b> / 12</div>
+    <div class="snum"><b>10</b> / 11</div>
     <div class="s-in">
       <div class="kick eyebrow">Что получает рекламодатель на выходе</div>
       <h2 class="h-lg">Результат для бренда</h2>
@@ -274,29 +287,20 @@ a{color:inherit;text-decoration:none}
 
   <!-- 11. Почему Formats.media -->
   <section class="slide" id="s11">
-    <div class="glow"></div>
+    <div class="bg-img"><img src="img/cover_bg.jpg" alt=""></div>
+    <div class="bg-veil veil-l"></div>
     <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>11</b> / 12</div>
+    <div class="snum"><b>11</b> / 11</div>
     <div class="s-in">
       <div class="kick eyebrow">Почему Formats.media</div>
       <h2 class="h-lg">Не один формат, а сценарий контакта</h2>
-      <p class="lead">Мы предлагаем не набор разрозненных размещений, а продуманную архитектуру касаний: от охватного присутствия — к более глубокому вовлечению — к переходу пользователя в действие. Управляемая система касаний, нативность, активное внимание и рост доли голоса.</p>
-    </div>
-  </section>
-
-  <!-- 12. Финал -->
-  <section class="slide" id="s12">
-    <div class="bg-img"><img src="img/cover_bg.jpg" alt=""></div>
-    <div class="bg-veil veil-d"></div>
-    <div class="glow"></div>
-    <div class="brandmark">FORMATS MEDIA <span>× Мултон</span></div>
-    <div class="snum"><b>12</b> / 12</div>
-    <div class="s-in" style="text-align:center">
-      <div class="kick eyebrow">Следующий шаг</div>
-      <h2 class="h-xl" style="font-size:clamp(32px,5vw,68px)">Соберём медиасценарий<br>под задачи бренда</h2>
-      <p class="lead" style="margin:0 auto 30px">От охватного запуска до интерактивного брендового сценария и трафиковой поддержки — с понятной ролью каждого формата.</p>
-      <a class="btn btn-lime" href="mailto:hello@formats.media?subject=Медиасценарий%20Formats.media%20×%20Мултон">Обсудить кампанию →</a>
-      <div class="mut" style="margin-top:22px;font-size:14px">formats.media</div>
+      <p class="lead narrow">Мы предлагаем не набор разрозненных размещений, а продуманную архитектуру касаний: от охватного присутствия — к более глубокому вовлечению — к переходу пользователя в действие. Интерактивные форматы на топ-площадках Рунета.</p>
+      <div class="pills">
+        <div class="pill"><div class="t">Привлекают внимание</div></div>
+        <div class="pill"><div class="t">Вовлекают в коммуникацию</div></div>
+        <div class="pill"><div class="t">Улучшают восприятие</div></div>
+        <div class="pill"><div class="t">Повышают узнаваемость</div></div>
+      </div>
     </div>
   </section>
 
